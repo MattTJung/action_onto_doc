@@ -26,7 +26,7 @@ runs:
       shell: bash
     - run: echo "Ontology File Path ${{ inputs.ontology-file-path }}"
       shell: bash
-    - run: echo "Ontology Version $ONTO_VERSION"
+    - run: echo "Ontology Version ${{ env.ONTO_VERSION }}"
       shell: bash
     - run: ./goodbye.sh
       shell: bash
