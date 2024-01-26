@@ -8,10 +8,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: deploy_main
-      - name: Dump GitHub context
+      - name: Dump steps context
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
       - id: foo
         uses: MattTJung/action_onto_doc@develop
         with:
