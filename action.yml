@@ -28,19 +28,17 @@ runs:
            java -jar widoco.jar -ontFile ${{inputs.checkout-path}}/${{ inputs.ontology-file-path }} -outFolder publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }} -htaccess -uniteSections -includeAnnotationProperties -lang en-de -getOntologyMetadata -noPlaceHolderText -rewriteAll -webVowl
            cp publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index-en.html publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index.html
       shell: bash
+    - name: Publish to gh-pages
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v3
+      with:
+        target_branch: gh-pages
+        build_dir: publish
+        keep_history: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Generate artifact
       uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.ontology-name }}-${{ env.ONTO_VERSION }}
         path: publish
-    - id: random-number-generator
-      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-      shell: bash
-    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
-      shell: bash
-    - run: echo "Ontology File Path ${{ inputs.ontology-file-path }}"
-      shell: bash
-    - run: echo "Ontology Version ${{ env.ONTO_VERSION }}"
-      shell: bash
-    - run: ${{inputs.checkout-path}}/goodbye.sh
-      shell: bash
