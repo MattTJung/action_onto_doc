@@ -1,23 +1,22 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  publish_job:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
       - uses: actions/checkout@v4
         with:
           path: deploy_main
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - id: foo
-        uses: MattTJung/action_onto_doc@develop
+      - uses: MattTJung/action_onto_doc@develop
         with:
           checkout-path: deploy_main
           ontology-file-path: './.github/workflows/testdata/ontology.ttl'
           ontology-name: 'ont_pub_tmplt'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
+      - uses: MattTJung/action_onto_doc@develop
+        with:
+          checkout-path: deploy_main
+          ontology-file-path: './.github/workflows/testdata/ontology2.ttl'
+          ontology-name: 'ont_pub_tmplt2'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
