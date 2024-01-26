@@ -6,11 +6,10 @@ jobs:
     name: A job to say hello
     steps:
       - uses: actions/checkout@v4
-      - run: ls -la
-        shell: bash
       - id: foo
         uses: MattTJung/action_onto_doc@develop
         with:
           who-to-greet: 'Mona the Octocat'
+          ontology-file-path: './.github/testdata/ontology.ttl'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
