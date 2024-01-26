@@ -7,13 +7,11 @@ jobs:
     steps:
       - uses: MattTJung/action_onto_doc@develop
         with:
-          checkout-path: deploy_main
           ontology-file-path: './.github/workflows/testdata/ontology.ttl'
           ontology-name: 'ont_pub_tmplt'
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: MattTJung/action_onto_doc@develop
         with:
-          checkout-path: deploy_main
           ontology-file-path: './.github/workflows/testdata/ontology2.ttl'
           ontology-name: 'ont_pub_tmplt2'
           github-token: ${{ secrets.GITHUB_TOKEN }}
