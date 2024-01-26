@@ -7,11 +7,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          path: checkoutpath
-      - id: foo
-        uses: MattTJung/action_onto_doc@develop
+          path: deploy_main
+      - uses: MattTJung/action_onto_doc@develop
         with:
           checkout-path: checkoutpath
           ontology-file-path: './.github/workflows/testdata/ontology.ttl'
+          ontology-name: 'ont_pub_tmplt'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash

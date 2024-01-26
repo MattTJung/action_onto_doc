@@ -7,6 +7,9 @@ inputs:
   ontology-file-path:
     description: 'Path to ontology file relative to repo base directory'
     required: true
+  ontology-name:
+    description: 'Name of ontology'
+    required: true
 outputs:
   random-number:
     description: "Random number"
@@ -14,8 +17,16 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{inputs.checkout-path}}/.github/workflows/get_version.sh ${{inputs.checkout-path}} ${{ inputs.ontology-file-path }}
+    - name: Get ontology version
+      run: ${{inputs.checkout-path}}/.github/workflows/get_version.sh ${{inputs.checkout-path}} ${{ inputs.ontology-file-path }}
       shell: bash
+    - name: Build HTML for ${{ inputs.ontology-name }} - ${{ inputs.ontology-file-path }}
+      if: success()
+      run: |
+           wget -O widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-11-widoco-1.4.17-jar-with-dependencies.jar
+           mkdir -p publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}
+           java -jar widoco.jar -ontFile ${{inputs.checkout-path}}/${{ inputs.ontology-file-path }} -outFolder publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }} -htaccess -uniteSections -includeAnnotationProperties -lang en-de -getOntologyMetadata -noPlaceHolderText -rewriteAll -webVowl
+           cp publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index-en.html publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index.html
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
