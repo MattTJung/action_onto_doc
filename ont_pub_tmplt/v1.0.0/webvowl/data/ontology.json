@@ -1113,7 +1113,7 @@
     "comment" : {
       "en" : "Date of formal issuance of the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "2"
   }, {
     "iri" : "http://purl.org/dc/terms/modified",
@@ -1138,7 +1138,7 @@
     "comment" : {
       "en" : "Date on which the resource was changed."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "7"
   }, {
     "iri" : "http://purl.org/dc/terms/bibliographicCitation",
@@ -1163,7 +1163,7 @@
     "comment" : {
       "en" : "A bibliographic reference for the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "10"
   }, {
     "iri" : "http://purl.org/dc/terms/date",
@@ -1188,7 +1188,7 @@
     "comment" : {
       "en" : "A point or period of time associated with an event in the lifecycle of the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "12"
   }, {
     "iri" : "https://w3id.org/pmd/ont_pub_tmplt/exampleInverseRelation",
@@ -1220,7 +1220,7 @@
       "en" : "Example Inverse Relation"
     },
     "domain" : "1",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "14"
   }, {
     "iri" : "http://purl.org/dc/terms/available",
@@ -1245,27 +1245,27 @@
     "comment" : {
       "en" : "Date that the resource became or will become available."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "16"
   }, {
     "range" : "20",
     "domain" : "19",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "18"
   }, {
     "range" : "6",
     "domain" : "22",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "21"
   }, {
     "range" : "25",
     "domain" : "24",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "23"
   }, {
     "range" : "20",
     "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "26"
   }, {
     "iri" : "http://purl.org/dc/terms/valid",
@@ -1290,7 +1290,7 @@
     "comment" : {
       "en" : "Date (often a range) of validity of a resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "28"
   }, {
     "iri" : "http://purl.org/dc/terms/dateSubmitted",
@@ -1315,7 +1315,7 @@
     "comment" : {
       "en" : "Date of submission of the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "36"
   }, {
     "iri" : "http://purl.org/dc/terms/identifier",
@@ -1340,17 +1340,17 @@
     "comment" : {
       "en" : "An unambiguous reference to the resource within a given context."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "39"
   }, {
     "range" : "33",
     "domain" : "35",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "44"
   }, {
     "range" : "33",
     "domain" : "34",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "45"
   }, {
     "iri" : "http://purl.org/dc/terms/created",
@@ -1375,12 +1375,12 @@
     "comment" : {
       "en" : "Date of creation of the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "46"
   }, {
     "range" : "6",
     "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "48"
   }, {
     "iri" : "http://purl.org/dc/terms/dateAccepted",
@@ -1405,7 +1405,7 @@
     "comment" : {
       "en" : "Date of acceptance of the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "49"
   }, {
     "domain" : "24",
@@ -1418,12 +1418,12 @@
   }, {
     "range" : "33",
     "domain" : "32",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "52"
   }, {
     "range" : "30",
     "domain" : "31",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "54"
   }, {
     "iri" : "https://w3id.org/pmd/ont_pub_tmplt/exampleRelation",
@@ -1454,7 +1454,7 @@
       "en" : "Example Relation"
     },
     "domain" : "1",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "15"
   }, {
     "iri" : "http://purl.org/dc/terms/alternative",
@@ -1479,7 +1479,7 @@
     "comment" : {
       "en" : "An alternative name for the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "61"
   }, {
     "iri" : "http://purl.org/dc/terms/title",
@@ -1501,7 +1501,7 @@
     "comment" : {
       "en" : "A name given to the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "62"
   }, {
     "iri" : "http://purl.org/dc/terms/dateCopyrighted",
@@ -1526,7 +1526,7 @@
     "comment" : {
       "en" : "Date of copyright of the resource."
     },
-    "attributes" : [ "datatype", "external" ],
+    "attributes" : [ "external", "datatype" ],
     "id" : "63"
   } ]
 }
