@@ -9,7 +9,7 @@ jobs:
       - run: ls -la
         shell: bash
       - id: foo
-        uses: MattTJung/action_onto_doc@v1
+        uses: MattTJung/action_onto_doc@develop
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
