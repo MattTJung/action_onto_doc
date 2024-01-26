@@ -8,9 +8,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: deploy_main
-      - uses: MattTJung/action_onto_doc@develop
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - id: foo
+        uses: MattTJung/action_onto_doc@develop
         with:
-          checkout-path: checkoutpath
+          checkout-path: deploy_main
           ontology-file-path: './.github/workflows/testdata/ontology.ttl'
           ontology-name: 'ont_pub_tmplt'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
