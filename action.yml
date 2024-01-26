@@ -1,13 +1,12 @@
 name: 'Hello World'
 description: 'Greet someone'
 inputs:
+  checkout-path:
+    description: 'Path used in action/checkout'
+    default: '.'
   ontology-file-path:
-    description: 'Path to ontology file'
+    description: 'Path to ontology file relative to repo base directory'
     required: true
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
 outputs:
   random-number:
     description: "Random number"
@@ -15,9 +14,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - run: ./.github/workflows/get_version.sh ${{ inputs.ontology-file-path }}
+    - run: ${{inputs.checkout-path}}/.github/workflows/get_version.sh ${{inputs.checkout-path}}/${{ inputs.ontology-file-path }}
       shell: bash
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
@@ -28,5 +25,5 @@ runs:
       shell: bash
     - run: echo "Ontology Version ${{ env.ONTO_VERSION }}"
       shell: bash
-    - run: ./goodbye.sh
+    - run: ${{inputs.checkout-path}}/goodbye.sh
       shell: bash
