@@ -10,6 +10,6 @@ jobs:
         uses: MattTJung/action_onto_doc@develop
         with:
           who-to-greet: 'Mona the Octocat'
-          ontology-file-path: './.github/testdata/ontology.ttl'
+          ontology-file-path: './.github/workflows/testdata/ontology.ttl'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
