@@ -1,5 +1,5 @@
 pip install rdflib
-ONTO_VERSION=$(python .github/workflows/get_version.py $1)
+ONTO_VERSION=$(python $1/.github/workflows/get_version.py $1/$2)
 if [ -z "$ONTO_VERSION"]; then
     echo "No version found"
     exit 1

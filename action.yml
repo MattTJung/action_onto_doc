@@ -14,7 +14,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{inputs.checkout-path}}/.github/workflows/get_version.sh ${{inputs.checkout-path}}/${{ inputs.ontology-file-path }}
+    - run: ${{inputs.checkout-path}}/.github/workflows/get_version.sh ${{inputs.checkout-path}} ${{ inputs.ontology-file-path }}
       shell: bash
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
