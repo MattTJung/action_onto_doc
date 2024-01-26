@@ -28,6 +28,11 @@ runs:
            java -jar widoco.jar -ontFile ${{inputs.checkout-path}}/${{ inputs.ontology-file-path }} -outFolder publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }} -htaccess -uniteSections -includeAnnotationProperties -lang en-de -getOntologyMetadata -noPlaceHolderText -rewriteAll -webVowl
            cp publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index-en.html publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index.html
       shell: bash
+    - name: Generate artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ inputs.ontology-name }}-${{ env.ONTO_VERSION }}
+        path: publish/.
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
