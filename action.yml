@@ -18,7 +18,7 @@ runs:
       with:
         path: deploy_main
     - name: Get ontology version
-      run: ${{ github.action_path }}/.github/workflows/get_version.sh deploy_main ${{ inputs.ontology-file-path }}
+      run: ${{ github.action_path }}/.github/workflows/get_version.sh deploy_main ${{ inputs.ontology-file-path }} ${{ github.action_path }}
       shell: bash
     - name: Build HTML for ${{ inputs.ontology-name }} - ${{ inputs.ontology-file-path }}
       if: success()
