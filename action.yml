@@ -1,9 +1,6 @@
-name: 'Hello World'
-description: 'Greet someone'
+name: 'ontology_publish'
+description: 'Create different representations and a html page from an ontology and publish it for github pages'
 inputs:
-  checkout-path:
-    description: 'Path used in action/checkout'
-    default: '.'
   ontology-file-path:
     description: 'Path to ontology file relative to repo base directory'
     required: true
@@ -16,15 +13,19 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        path: deploy_main
     - name: Get ontology version
-      run: ${{inputs.checkout-path}}/.github/workflows/get_version.sh ${{inputs.checkout-path}} ${{ inputs.ontology-file-path }}
+      run: deploy_main/.github/workflows/get_version.sh deploy_main ${{ inputs.ontology-file-path }}
       shell: bash
     - name: Build HTML for ${{ inputs.ontology-name }} - ${{ inputs.ontology-file-path }}
       if: success()
       run: |
            wget -O widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-11-widoco-1.4.17-jar-with-dependencies.jar
            mkdir -p publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}
-           java -jar widoco.jar -ontFile ${{inputs.checkout-path}}/${{ inputs.ontology-file-path }} -outFolder publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }} -htaccess -uniteSections -includeAnnotationProperties -lang en-de -getOntologyMetadata -noPlaceHolderText -rewriteAll -webVowl
+           java -jar widoco.jar -ontFile deploy_main/${{ inputs.ontology-file-path }} -outFolder publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }} -htaccess -uniteSections -includeAnnotationProperties -lang en-de -getOntologyMetadata -noPlaceHolderText -rewriteAll -webVowl
            cp publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index-en.html publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index.html
       shell: bash
     - name: Publish to gh-pages
