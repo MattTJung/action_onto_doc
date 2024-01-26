@@ -10,6 +10,10 @@ inputs:
   ontology-name:
     description: 'Name of ontology'
     required: true
+  github-token:
+    description: 'GitHub token'
+    required: true
+    default: '${{ secrets.GITHUB_TOKEN }}'
 outputs:
   random-number:
     description: "Random number"
@@ -36,7 +40,7 @@ runs:
         build_dir: publish
         keep_history: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.github-token }}
     - name: Generate artifact
       uses: actions/upload-artifact@v4
       with:

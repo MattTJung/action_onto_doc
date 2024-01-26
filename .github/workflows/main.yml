@@ -18,5 +18,6 @@ jobs:
           checkout-path: deploy_main
           ontology-file-path: './.github/workflows/testdata/ontology.ttl'
           ontology-name: 'ont_pub_tmplt'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
