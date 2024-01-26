@@ -17,7 +17,7 @@ runs:
   steps:
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
-    - run: ./.github/scripts/workflows/get_version.sh
+    - run: ./.github/workflows/get_version.sh
       shell: bash
     - id: random-number-generator
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
