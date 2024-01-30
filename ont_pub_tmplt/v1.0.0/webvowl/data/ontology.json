@@ -747,30 +747,6 @@
         "en" : "DCMI Type Vocabulary"
       }
     }, {
-      "iri" : "http://purl.org/dc/terms/IMT",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://www.iana.org/assignments/media-types/",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of media types specified by the Internet Assigned Numbers Authority."
-      },
-      "labels" : {
-        "IRI-based" : "IMT",
-        "en" : "IMT"
-      }
-    }, {
       "iri" : "http://purl.org/dc/terms/DDC",
       "baseIri" : "http://purl.org/dc/terms",
       "annotations" : {
@@ -793,6 +769,30 @@
       "labels" : {
         "IRI-based" : "DDC",
         "en" : "DDC"
+      }
+    }, {
+      "iri" : "http://purl.org/dc/terms/IMT",
+      "baseIri" : "http://purl.org/dc/terms",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "http://purl.org/dc/terms/",
+          "type" : "iri"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "http://www.iana.org/assignments/media-types/",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The set of media types specified by the Internet Assigned Numbers Authority."
+      },
+      "labels" : {
+        "IRI-based" : "IMT",
+        "en" : "IMT"
       }
     }, {
       "iri" : "http://purl.org/dc/terms/UDC",
@@ -1220,7 +1220,7 @@
       "en" : "Example Inverse Relation"
     },
     "domain" : "1",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "14"
   }, {
     "iri" : "http://purl.org/dc/terms/available",
@@ -1454,7 +1454,7 @@
       "en" : "Example Relation"
     },
     "domain" : "1",
-    "attributes" : [ "object", "external" ],
+    "attributes" : [ "external", "object" ],
     "id" : "15"
   }, {
     "iri" : "http://purl.org/dc/terms/alternative",
