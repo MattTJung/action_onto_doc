@@ -7,6 +7,9 @@ inputs:
   ontology-name:
     description: 'Name of ontology'
     required: true
+  gh-pages-target-branch:
+    description: 'Target brach for publishing to gh-pages (defaults to gh-pages)'
+    default: 'gh-pages'
   github-token:
     description: 'GitHub token'
     required: true
@@ -25,14 +28,14 @@ runs:
       run: |
            wget -nv -O widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-11-widoco-1.4.17-jar-with-dependencies.jar
            mkdir -p publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}
-           java -jar widoco.jar -ontFile deploy_main/${{ inputs.ontology-file-path }} -outFolder publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }} -uniteSections -includeAnnotationProperties -lang en -getOntologyMetadata -rewriteAll -webVowl
+           java -jar widoco.jar -ontFile deploy_main/${{ inputs.ontology-file-path }} -outFolder publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }} -uniteSections -includeAnnotationProperties -lang en-de -getOntologyMetadata -rewriteAll -webVowl
            cp publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index-en.html publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index.html
       shell: bash
     - name: Publish to gh-pages
       if: success()
       uses: crazy-max/ghaction-github-pages@v4
       with:
-        target_branch: gh-pages
+        target_branch: ${{ inputs.gh-pages-target-branch }}
         build_dir: publish
         keep_history: true
       env:
