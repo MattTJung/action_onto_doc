@@ -3,7 +3,9 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
 <https://w3id.org/pmd/ont_pub_tmplt/1.0.0> a prov:Entity;
+	 dc:title "Ontology Publication Template for the PMD";
 	 prov:wasAttributedTo <https://orcid.org/0000-0000-0000-0000>;
 	 dc:creator <https://orcid.org/0000-0000-0000-0000>;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasGeneratedAt "2023-12-15";
 .
