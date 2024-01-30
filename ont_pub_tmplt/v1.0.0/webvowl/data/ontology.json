@@ -53,7 +53,7 @@
     "id" : "32",
     "type" : "owl:Class"
   }, {
-    "id" : "31",
+    "id" : "33",
     "type" : "owl:Class"
   }, {
     "id" : "6",
@@ -80,10 +80,10 @@
     "id" : "3",
     "type" : "owl:Thing"
   }, {
-    "id" : "53",
+    "id" : "31",
     "type" : "owl:Class"
   }, {
-    "id" : "33",
+    "id" : "53",
     "type" : "owl:Class"
   }, {
     "id" : "8",
@@ -274,6 +274,28 @@
     "attributes" : [ "external" ],
     "id" : "27"
   }, {
+    "iri" : "http://purl.org/dc/terms/RightsStatement",
+    "baseIri" : "http://purl.org/dc/terms",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/dc/terms/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "RightsStatement",
+      "en" : "Rights Statement"
+    },
+    "subClasses" : [ "31" ],
+    "comment" : {
+      "en" : "A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights."
+    },
+    "attributes" : [ "external" ],
+    "id" : "30"
+  }, {
     "iri" : "http://purl.org/dc/terms/Jurisdiction",
     "baseIri" : "http://purl.org/dc/terms",
     "instances" : 0,
@@ -293,30 +315,8 @@
       "en" : "The extent or range of judicial, law enforcement, or other authority."
     },
     "attributes" : [ "external" ],
-    "id" : "30",
-    "superClasses" : [ "31" ]
-  }, {
-    "iri" : "http://purl.org/dc/terms/RightsStatement",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "RightsStatement",
-      "en" : "Rights Statement"
-    },
-    "subClasses" : [ "33" ],
-    "comment" : {
-      "en" : "A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights."
-    },
-    "attributes" : [ "external" ],
-    "id" : "32"
+    "id" : "32",
+    "superClasses" : [ "33" ]
   }, {
     "iri" : "http://purl.org/dc/terms/LocationPeriodOrJurisdiction",
     "baseIri" : "http://purl.org/dc/terms",
@@ -333,12 +333,12 @@
       "IRI-based" : "LocationPeriodOrJurisdiction",
       "en" : "Location, Period, or Jurisdiction"
     },
-    "subClasses" : [ "30", "34", "35" ],
+    "subClasses" : [ "32", "34", "35" ],
     "comment" : {
       "en" : "A location, period of time, or jurisdiction."
     },
     "attributes" : [ "external" ],
-    "id" : "31"
+    "id" : "33"
   }, {
     "iri" : "http://purl.org/dc/terms/MediaType",
     "baseIri" : "http://purl.org/dc/terms",
@@ -504,6 +504,28 @@
       "undefined" : "Thing"
     }
   }, {
+    "iri" : "http://purl.org/dc/terms/LicenseDocument",
+    "baseIri" : "http://purl.org/dc/terms",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/dc/terms/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "LicenseDocument",
+      "en" : "License Document"
+    },
+    "comment" : {
+      "en" : "A legal document giving official permission to do something with a resource."
+    },
+    "attributes" : [ "external" ],
+    "id" : "31",
+    "superClasses" : [ "30" ]
+  }, {
     "iri" : "http://purl.org/dc/terms/ProvenanceStatement",
     "baseIri" : "http://purl.org/dc/terms",
     "instances" : 0,
@@ -524,28 +546,6 @@
     },
     "attributes" : [ "external" ],
     "id" : "53"
-  }, {
-    "iri" : "http://purl.org/dc/terms/LicenseDocument",
-    "baseIri" : "http://purl.org/dc/terms",
-    "instances" : 0,
-    "annotations" : {
-      "isDefinedBy" : [ {
-        "identifier" : "isDefinedBy",
-        "language" : "undefined",
-        "value" : "http://purl.org/dc/terms/",
-        "type" : "iri"
-      } ]
-    },
-    "label" : {
-      "IRI-based" : "LicenseDocument",
-      "en" : "License Document"
-    },
-    "comment" : {
-      "en" : "A legal document giving official permission to do something with a resource."
-    },
-    "attributes" : [ "external" ],
-    "id" : "33",
-    "superClasses" : [ "32" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
@@ -583,7 +583,7 @@
     },
     "attributes" : [ "external" ],
     "id" : "35",
-    "superClasses" : [ "31" ]
+    "superClasses" : [ "33" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
@@ -690,7 +690,7 @@
     },
     "attributes" : [ "external" ],
     "id" : "34",
-    "superClasses" : [ "31" ]
+    "superClasses" : [ "33" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
@@ -747,30 +747,6 @@
         "en" : "DCMI Type Vocabulary"
       }
     }, {
-      "iri" : "http://purl.org/dc/terms/DDC",
-      "baseIri" : "http://purl.org/dc/terms",
-      "annotations" : {
-        "isDefinedBy" : [ {
-          "identifier" : "isDefinedBy",
-          "language" : "undefined",
-          "value" : "http://purl.org/dc/terms/",
-          "type" : "iri"
-        } ],
-        "seeAlso" : [ {
-          "identifier" : "seeAlso",
-          "language" : "undefined",
-          "value" : "http://www.oclc.org/dewey/",
-          "type" : "iri"
-        } ]
-      },
-      "comment" : {
-        "en" : "The set of conceptual resources specified by the Dewey Decimal Classification."
-      },
-      "labels" : {
-        "IRI-based" : "DDC",
-        "en" : "DDC"
-      }
-    }, {
       "iri" : "http://purl.org/dc/terms/IMT",
       "baseIri" : "http://purl.org/dc/terms",
       "annotations" : {
@@ -793,6 +769,30 @@
       "labels" : {
         "IRI-based" : "IMT",
         "en" : "IMT"
+      }
+    }, {
+      "iri" : "http://purl.org/dc/terms/DDC",
+      "baseIri" : "http://purl.org/dc/terms",
+      "annotations" : {
+        "isDefinedBy" : [ {
+          "identifier" : "isDefinedBy",
+          "language" : "undefined",
+          "value" : "http://purl.org/dc/terms/",
+          "type" : "iri"
+        } ],
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "http://www.oclc.org/dewey/",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The set of conceptual resources specified by the Dewey Decimal Classification."
+      },
+      "labels" : {
+        "IRI-based" : "DDC",
+        "en" : "DDC"
       }
     }, {
       "iri" : "http://purl.org/dc/terms/UDC",
@@ -1220,7 +1220,7 @@
       "en" : "Example Inverse Relation"
     },
     "domain" : "1",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "14"
   }, {
     "iri" : "http://purl.org/dc/terms/available",
@@ -1250,22 +1250,22 @@
   }, {
     "range" : "20",
     "domain" : "19",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "18"
   }, {
     "range" : "6",
     "domain" : "22",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "21"
   }, {
     "range" : "25",
     "domain" : "24",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "23"
   }, {
     "range" : "20",
     "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "26"
   }, {
     "iri" : "http://purl.org/dc/terms/valid",
@@ -1343,14 +1343,14 @@
     "attributes" : [ "external", "datatype" ],
     "id" : "39"
   }, {
-    "range" : "31",
+    "range" : "33",
     "domain" : "35",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "44"
   }, {
-    "range" : "31",
+    "range" : "33",
     "domain" : "34",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "45"
   }, {
     "iri" : "http://purl.org/dc/terms/created",
@@ -1380,7 +1380,7 @@
   }, {
     "range" : "6",
     "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "48"
   }, {
     "iri" : "http://purl.org/dc/terms/dateAccepted",
@@ -1416,14 +1416,14 @@
       "undefined" : "is a"
     }
   }, {
-    "range" : "31",
-    "domain" : "30",
-    "attributes" : [ "anonymous", "object" ],
+    "range" : "33",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "52"
   }, {
-    "range" : "32",
-    "domain" : "33",
-    "attributes" : [ "anonymous", "object" ],
+    "range" : "30",
+    "domain" : "31",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "54"
   }, {
     "iri" : "https://w3id.org/pmd/ont_pub_tmplt/exampleRelation",
@@ -1454,7 +1454,7 @@
       "en" : "Example Relation"
     },
     "domain" : "1",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "15"
   }, {
     "iri" : "http://purl.org/dc/terms/alternative",
