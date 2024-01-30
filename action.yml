@@ -26,7 +26,7 @@ runs:
     - name: Build HTML for ${{ inputs.ontology-name }} - ${{ inputs.ontology-file-path }}
       if: success()
       run: |
-           wget -nv -O widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.21/java-11-widoco-1.4.21-jar-with-dependencies.jar
+           wget -nv -O widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.21/widoco-1.4.21-jar-with-dependencies_JDK-11.jar
            mkdir -p publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}
            java -jar widoco.jar -ontFile deploy_main/${{ inputs.ontology-file-path }} -outFolder publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }} -uniteSections -includeAnnotationProperties -lang en-de -getOntologyMetadata -rewriteAll -webVowl
            cp publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index-en.html publish/${{ inputs.ontology-name }}/v${{ env.ONTO_VERSION }}/index.html
